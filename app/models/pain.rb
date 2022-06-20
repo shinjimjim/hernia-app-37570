@@ -12,4 +12,8 @@ class Pain < ActiveHash::Base
     { id: 9, name: '9' },
     { id: 10, name: '10' }
   ]
+
+  include ActiveHash::Associations
+  has_many :events
+
 end
