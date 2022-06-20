@@ -1,0 +1,48 @@
+<h1>経過観察</h1>
+
+<%= form_with(model: @event, local: true) do |form| %>
+
+  <div class="time">
+    <%= form.label :start_time %>
+    <%= form.datetime_select :start_time %>
+  </div>
+
+  <div class="pain">
+    <%= form.collection_select(:pain_id, Pain.all, :id, :name, {}, {class:"pain-select", id:"pain"}) %>
+  </div>
+
+  <div class="stretch">
+    <%= form.collection_select(:stretch_id, Stretch.all, :id, :name, {}, {class:"stretch-select", id:"stretch"}) %>
+  </div>
+
+  <div class="training">
+    <%= form.collection_select(:training_id, Training.all, :id, :name, {}, {class:"training-select", id:"training"}) %>
+  </div>
+
+  <div class="posture">
+    <%= form.collection_select(:Posture_id, posture.all, :id, :name, {}, {class:"posture-select", id:"posture"}) %>
+  </div>
+
+  <div class="meal">
+    <%= form.collection_select(:meal_id, Meal.all, :id, :name, {}, {class:"meal-select", id:"meal"}) %>
+  </div>
+
+  <div class="motion">
+    <%= form.collection_select(:motion_id, Motion.all, :id, :name, {}, {class:"motion-select", id:"motion"}) %>
+  </div>
+
+  <div class="smoking">
+    <%= form.collection_select(:smoking_id, Smoking.all, :id, :name, {}, {class:"smoking-select", id:"smoking"}) %>
+  </div>
+
+  <div class="postscript">
+    <%= form.label :postscript %>
+    <%= form.text_field :postscript %>
+  </div>
+
+
+  <div class="submit">
+    <%= form.submit %>
+  </div>
+
+<% end %>
