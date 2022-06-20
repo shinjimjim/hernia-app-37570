@@ -8,5 +8,5 @@ class Event < ApplicationRecord
   belongs_to :motion
   belongs_to :smoking
 
-  validates :pain_id, numericality: { other_than: 0 }
+  validates :pain_id, numericality: { other_than: 0, message: "can't be blank" }
 end
