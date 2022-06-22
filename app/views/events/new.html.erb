@@ -20,7 +20,7 @@
   </div>
 
   <div class="posture">
-    <%= form.collection_select(:Posture_id, posture.all, :id, :name, {}, {class:"posture-select", id:"posture"}) %>
+    <%= form.collection_select(:posture_id, Posture.all, :id, :name, {}, {class:"posture-select", id:"posture"}) %>
   </div>
 
   <div class="meal">
