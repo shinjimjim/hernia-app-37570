@@ -3,7 +3,7 @@
 <%= form_with(model: @event, local: true) do |form| %>
 
   <div class="time">
-    <%= form.label :start_time %>
+    <%= form.label :登録日時 %>
     <%= form.datetime_select :start_time %>
   </div>
 
@@ -43,7 +43,7 @@
   </div>
 
   <div class="postscript">
-    <%= form.label :postscript %>
+    <%= form.label :追記 %>
     <%= form.text_field :postscript %>
   </div>
 
