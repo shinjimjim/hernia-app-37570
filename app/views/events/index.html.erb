@@ -1,11 +1,12 @@
-<%= link_to '経過観察', new_event_path %>
-
 <%= month_calendar events: @events do |date, events| %>
   <%= date.day %>
 
   <% events.each do |event| %>
-    <div>
+    <div class = "pain">
       <%= event.pain.name %>
     </div>
   <% end %>
 <% end %>
+<div class = "new-button">
+<%= link_to '経過観察', new_event_path %>
+</div>
