@@ -7,31 +7,38 @@
     <%= form.datetime_select :start_time %>
   </div>
 
-  <div class="pain">
+  <div class="pain-edit">
+    <%= form.label :"今日の痛みは0(全く痛くない)〜10(今までに経験した中で最も痛い)の11段階で表すとどのくらいですか？" %>
     <%= form.collection_select(:pain_id, Pain.all, :id, :name, {}, {class:"pain-select", id:"pain"}) %>
   </div>
 
   <div class="stretch">
+    <%= form.label :ストレッチをしましたか？ %>
     <%= form.collection_select(:stretch_id, Stretch.all, :id, :name, {}, {class:"stretch-select", id:"stretch"}) %>
   </div>
 
   <div class="training">
+    <%= form.label :筋力トレーニングをしましたか？ %>
     <%= form.collection_select(:training_id, Training.all, :id, :name, {}, {class:"training-select", id:"training"}) %>
   </div>
 
   <div class="posture">
+    <%= form.label :負担をかけない姿勢で生活できましたか？ %>
     <%= form.collection_select(:posture_id, Posture.all, :id, :name, {}, {class:"posture-select", id:"posture"}) %>
   </div>
 
   <div class="meal">
+    <%= form.label :バランスの良い食事を摂れましたか？ %>
     <%= form.collection_select(:meal_id, Meal.all, :id, :name, {}, {class:"meal-select", id:"meal"}) %>
   </div>
 
   <div class="motion">
+    <%= form.label :負担のかかる激しい運動をしませんでした？ %>
     <%= form.collection_select(:motion_id, Motion.all, :id, :name, {}, {class:"motion-select", id:"motion"}) %>
   </div>
 
   <div class="smoking">
+    <%= form.label :どのくらいタバコを吸いましたか？ %>
     <%= form.collection_select(:smoking_id, Smoking.all, :id, :name, {}, {class:"smoking-select", id:"smoking"}) %>
   </div>
 
