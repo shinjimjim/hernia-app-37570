@@ -1,0 +1,60 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import "bootstrap";
+ @import "simple_calendar";
+
+ .simple-calendar {
+  .day {
+    background: #fff9ee;
+  }
+  .wday-0 {
+    background: #ffeaea;
+    color: #ff505c;
+  }
+  .wday-1 {}
+  .wday-2 {}
+  .wday-3 {}
+  .wday-4 {}
+  .wday-5 {}
+  .wday-6 {
+    background: #d4ebff;
+    color: #5984dc;
+  }
+  .today {
+    background: #FFA0A0;
+  }
+  .past {}
+  .future {}
+  .start-date {}
+  .prev-month {
+    background-color: lightgray;
+  }
+  .next-month {
+    background-color: lightgray;
+  }
+  .current-month {}
+  .has-events {}
+}
+/* ホバーした際の背景色 tableタグにcalender_tableクラスを追記しています*/
+.table tr td:hover {
+  background-color: #FFFF8c;    
+}
+
+.pain {
+  text-align: center;
+  font-size: 25px;
+  color: green;
+}
