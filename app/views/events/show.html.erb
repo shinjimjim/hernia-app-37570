@@ -1,0 +1,80 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>登録日</strong>
+  <%= @event.start_time.strftime("%Y-%m-%d %H:%M") %>
+</p>
+
+<p>
+  <strong>今日の痛みは0(全く痛くない)〜10(今までに経験した中で最も痛い)の11段階で表すとどのくらいですか？</strong>
+  <%= @event.pain.name %>
+</p>
+
+<p>
+  <strong>ストレッチをしましたか？</strong>
+    <% if @event.stretch.present? %>
+      <%= @event.stretch.name %>
+    <% else %>
+      <%= "未選択" %>
+    <% end %>
+</p>
+
+<p>
+  <strong>筋力トレーニングをしましたか？</strong>
+    <% if @event.training.present? %>
+      <%= @event.training.name %>
+    <% else %>
+      <%= "未選択" %>
+    <% end %>
+</p>
+
+<p>
+  <strong>負担をかけない姿勢で生活できましたか？</strong>
+    <% if @event.posture.present? %>
+      <%= @event.posture.name %>
+    <% else %>
+      <%= "未選択" %>
+    <% end %>
+</p>
+
+<p>
+  <strong>バランスの良い食事を摂れましたか？</strong>
+    <% if @event.meal.present? %>
+      <%= @event.meal.name %>
+    <% else %>
+      <%= "未選択" %>
+    <% end %>
+</p>
+
+<p>
+  <strong>負担のかかる激しい運動をしませんでした？</strong>
+    <% if @event.motion.present? %>
+      <%= @event.motion.name %>
+    <% else %>
+      <%= "未選択" %>
+    <% end %>
+</p>
+
+<p>
+  <strong>どのくらいタバコを吸いましたか？</strong>
+    <% if @event.smoking.present? %>
+      <%= @event.smoking.name %>
+    <% else %>
+      <%= "未選択" %>
+    <% end %>
+</p>
+
+<p>
+  <strong>追記</strong>
+    <% if @event.postscript.present? %>
+      <%= @event.postscript %>
+    <% else %>
+      <%= "未選択" %>
+    <% end %>
+</p>
+
+
+
+<%= link_to '編集', edit_event_path(@event) %> |
+<%= link_to '戻る', events_path %> |
+<%= link_to '削除', event_path(@event), method: :delete %>
