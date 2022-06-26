@@ -1,0 +1,58 @@
+<h1>経過観察</h1>
+
+<%= form_with(model: @event, local: true) do |form| %>
+
+  <div class="form-group">
+    <%= form.label :登録日 %><br>
+    <%= form.date_select :start_time %>
+  </div>
+  
+  <div class="form-group">
+    <%= form.label :"今日の痛みは0(全く痛くない)〜10(今までに経験した中で最も痛い)の11段階で表すとどのくらいですか？" %><br>
+    <%= form.collection_select(:pain_id, Pain.all, :id, :name, {}, {class:"pain-select form-control-lg", id:"pain"}) %>
+    <%= "（必須）" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :ストレッチをしましたか？ %><br>
+    <%= form.collection_select(:stretch_id, Stretch.all, :id, :name, {}, {class:"stretch-select", id:"stretch"}) %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :筋力トレーニングをしましたか？ %><br>
+    <%= form.collection_select(:training_id, Training.all, :id, :name, {}, {class:"training-select", id:"training"}) %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :負担をかけない姿勢で生活できましたか？ %><br>
+    <%= form.collection_select(:posture_id, Posture.all, :id, :name, {}, {class:"posture-select", id:"posture"}) %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :バランスの良い食事を摂れましたか？ %><br>
+    <%= form.collection_select(:meal_id, Meal.all, :id, :name, {}, {class:"meal-select", id:"meal"}) %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :負担のかかる激しい運動をしませんでした？ %><br>
+    <%= form.collection_select(:motion_id, Motion.all, :id, :name, {}, {class:"motion-select", id:"motion"}) %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :どのくらいタバコを吸いましたか？ %><br>
+    <%= form.collection_select(:smoking_id, Smoking.all, :id, :name, {}, {class:"smoking-select", id:"smoking"}) %>
+  </div>
+  <br>
+  <div class="form-group">
+    <%= form.label :追記 %><br>
+    <%= form.text_area :postscript, class:"form-control-lg" %>
+  </div>
+
+
+  <div class="submit">
+    <%= form.submit '登録', class:"btn btn-success btn-lg btn-block" %>
+  </div>
+
+
+
+<% end %>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<%= month_calendar events: @events do |date, events| %>
+  <%= date.day %>
+
+  <% events.each do |event| %>
+    <div class = "pain">
+      <%= link_to event.pain.name, event_path(event), class: "btn btn-success" %>
+    </div>
+  <% end %>
+<% end %>
+<div class = "new-button">
+<%= link_to '経過観察', new_event_path %>
+</div>
