@@ -1,5 +1,16 @@
 <p id="notice"><%= notice %></p>
 
+<div>
+    <%# ログインしているときは以下を表示する %>
+    <% if user_signed_in? %>
+      <div class="greeting">
+        <%= "こんにちは、" %>
+        <%= link_to current_user.name + "さん", "/users/#{current_user.id}", class: :greeting__link%>
+      </div>
+    <% end %>
+    <%# // ログインしているときは上記を表示する %>
+</div>
+
 <%= month_calendar events: @events do |date, events| %>
   <%= date.day %>
 
